@@ -17,7 +17,7 @@ net install dm75
 Enter the following at the Stata console.
 
 ```stata
-net from https://raw.githubusercontent.com/gslab-econ/gslab_stata/master/gslab_misc/ado          
+net from https://raw.githubusercontent.com/lboxell/gslab_stata/master/gslab_misc/ado          
 net uninstall benchmark 
 net install benchmark            
 net uninstall build_recode_template
@@ -73,5 +73,9 @@ net install sortunique
 net uninstall testbad
 net install testbad              
 net uninstall testgood
-net install testgood             
+net install testgood    
+net uninstall add_b_se_table
+net install add_b_se_table
+net uninstall init_b_se_table
+net install init_b_se_table         
 ```

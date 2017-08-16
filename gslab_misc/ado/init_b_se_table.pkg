@@ -1,0 +1,9 @@
+d gslab_stata: gslab_misc
+d
+d Author: Levi Boxell
+d
+d init_b_se_table: Initializes a matrix for storing regression output
+d
+f init_b_se_table.ado
+f init_b_se_table.hlp
+e

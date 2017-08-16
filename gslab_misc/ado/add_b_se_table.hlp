@@ -1,0 +1,32 @@
+.-
+help for ^add_b_se_table^
+.-
+
+ADD_B_SE_TABLE.ADO:  
+Adds regression to an `init_b_se_table` matrix for storing regression output
+--------------------------------------------------------------
+
+	^add_b_se_table^   
+
+
+Description
+-----------
+Adds regression to an `init_b_se_table` matrix for storing regression output
+
+Options
+-------------------------------
+. iter(int): Column of table to place coefficients and standard errors.
+. vars(string): The variables to be taken from the regression and stored (in order) in the table. Use `.` to have an empty space.
+. add_N(string): If "yes", adds number of observations to bottom of column
+
+
+Examples
+--------
+
+ . ^add_b_se_table^
+
+ 
+Authors
+-------
+
+Levi Boxell

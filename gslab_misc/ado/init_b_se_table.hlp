@@ -1,0 +1,32 @@
+.-
+help for ^init_b_se_table^
+.-
+
+INIT_B_SE_TABLE.ADO:  
+Initializes a matrix for storing regression output.
+--------------------------------------------------------------
+
+	^init_b_se_table^   
+
+
+Description
+-----------
+Initializes a matrix for storing regression output
+
+Options
+-------------------------------
+. var(int): Number of variables in table (base rows)
+. regs(int): Number of regressions in table (base columns)
+. extra_rows(int): Adds additional rows to table
+
+
+Examples
+--------
+
+ . ^init_b_se_table^
+
+ 
+Authors
+-------
+
+Levi Boxell

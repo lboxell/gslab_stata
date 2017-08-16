@@ -10,6 +10,8 @@ using the `net` command. See the packages' readme files for more information.
 
 ## License
 
+The `add_b_se_table` and `init_b_se_table` functions were added by Levi Boxell and are distributed under the MIT license, as below.
+
 The matrix_to_txt.ado file is a slightly modified version of [mat2txt](https://ideas.repec.org/c/boc/bocode/s437601.html). We take all blame for all limitations these changes produce and subsume any license the original work was distributed under. 
 
 Notwithstanding the above, the remaining portion of this work is licensed under the MIT license.
