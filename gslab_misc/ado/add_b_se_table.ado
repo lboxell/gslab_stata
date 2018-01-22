@@ -23,10 +23,9 @@ program add_b_se_table
 	}
 	if "`add_N'" == "yes" {
 		mat table[2 * `i' - 1, `iter'] = e(N)
-		local j = `j' - 1
+		local j = 0
 	}
 	if "`add_N_clust'" == "yes" {
 		mat table[2 * `i' - `j', `iter'] = e(N_clust)
-		local i = `i' + 1
 	}
 end
