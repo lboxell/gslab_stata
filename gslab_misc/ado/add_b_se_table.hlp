@@ -18,6 +18,7 @@ Options
 . iter(int): Column of table to place coefficients and standard errors.
 . vars(string): The variables to be taken from the regression and stored (in order) in the table. Use `.` to have an empty space.
 . add_N(string): If "yes", adds number of observations to bottom of column
+. add_N_clust(string): If "yes", adds number of clusters to bottom of column
 
 
 Examples
