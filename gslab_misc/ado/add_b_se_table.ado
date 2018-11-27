@@ -21,13 +21,13 @@ program add_b_se_table
 			if "`sig'" == "yes"{
 				local t_stat = _b[`v']/_se[`v']
 				if abs(t_stat) > 1.645 {
-					global table_`row'_`col' "$^{*}$"
+					global table_`row'_`iter' "$^{*}$"
 				}
 				if abs(t_stat) > 1.96 {
-					global table_`row'_`col' "$^{**}$"
+					global table_`row'_`iter' "$^{**}$"
 				}
 				if abs(t_stat) > 2.576 {
-					global table_`row'_`col' "$^{***}$"
+					global table_`row'_`iter' "$^{***}$"
 				}
 			}
 		}
