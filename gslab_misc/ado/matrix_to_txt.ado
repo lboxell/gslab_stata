@@ -46,7 +46,7 @@ program define matrix_to_txt
 			if `c'<=`formatn' local fmt: word `c' of `format'
 			file write `myfile' `fmt' (`matrix'[`r',`c'])
 			if "`SIG'" != "" {
-				file write `myfile' `table_`r'_`c''
+				file write `myfile' $table_`r'_`c'
 			}
 			if `c'<`ncols' {
 				file write `myfile' _tab

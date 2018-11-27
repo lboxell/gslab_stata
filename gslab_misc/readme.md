@@ -43,9 +43,7 @@ net install leaveout
 net uninstall load_and_append
 net install load_and_append      
 net uninstall loadglob
-net install loadglob             
-net uninstall matrix_to_txt
-net install matrix_to_txt                 
+net install loadglob                             
 net uninstall oo
 net install oo                   
 net uninstall ooo
@@ -74,6 +72,9 @@ net uninstall testbad
 net install testbad              
 net uninstall testgood
 net install testgood    
+net from https://raw.githubusercontent.com/lboxell/gslab_stata/master/gslab_misc/ado          
+net uninstall matrix_to_txt
+net install matrix_to_txt 
 net uninstall add_b_se_table
 net install add_b_se_table
 net uninstall init_b_se_table
