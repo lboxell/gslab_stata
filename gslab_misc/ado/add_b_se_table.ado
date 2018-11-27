@@ -20,13 +20,13 @@ program add_b_se_table
 			mat table[2 * `i',     `iter'] = _se[`v']
 				
 			local t_stat = _b[`v']/_se[`v']
-			if abs(t_stat) > 1.645 {
+			if abs(`t_stat') > 1.645 {
 				global table_`row'_`iter' "$^{*}$"
 			}
-			if abs(t_stat) > 1.96 {
+			if abs(`t_stat') > 1.96 {
 				global table_`row'_`iter' "$^{**}$"
 			}
-			if abs(t_stat) > 2.576 {
+			if abs(`t_stat') > 2.576 {
 				global table_`row'_`iter' "$^{***}$"
 			}
 		}
