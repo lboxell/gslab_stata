@@ -18,17 +18,16 @@ program add_b_se_table
 		else {
 			mat table[2 * `i' - 1, `iter'] = _b[`v']
 			mat table[2 * `i',     `iter'] = _se[`v']
-			if "`sig'" == "yes"{
-				local t_stat = _b[`v']/_se[`v']
-				if abs(t_stat) > 1.645 {
-					global table_`row'_`iter' "$^{*}$"
-				}
-				if abs(t_stat) > 1.96 {
-					global table_`row'_`iter' "$^{**}$"
-				}
-				if abs(t_stat) > 2.576 {
-					global table_`row'_`iter' "$^{***}$"
-				}
+				
+			local t_stat = _b[`v']/_se[`v']
+			if abs(t_stat) > 1.645 {
+				global table_`row'_`iter' "$^{*}$"
+			}
+			if abs(t_stat) > 1.96 {
+				global table_`row'_`iter' "$^{**}$"
+			}
+			if abs(t_stat) > 2.576 {
+				global table_`row'_`iter' "$^{***}$"
 			}
 		}
 		local i = `i' + 1
