@@ -9,7 +9,7 @@
 program define matrix_to_txt
 
 	version 10
-	syntax , Matrix(name) SAVing(str) [ REPlace APPend Title(str) Format(str) NOTe(str) USERownames USEColnames sig]
+	syntax , Matrix(name) SAVing(str) [ REPlace APPend Title(str) Format(str) NOTe(str) USERownames USEColnames sig wild_sig]
 
 	if "`format'"=="" local format "%10.0g"
 	local formatn: word count `format'
@@ -47,6 +47,9 @@ program define matrix_to_txt
 			file write `myfile' `fmt' (`matrix'[`r',`c'])
 			if "`sig'" != "" {
 				file write `myfile' ("${table_`r'_`c'}")
+			}
+			if "`wild_sig'" != "" {
+				file write `myfile' ("${table_wild_`r'_`c'}")
 			}
 			if `c'<`ncols' {
 				file write `myfile' _tab

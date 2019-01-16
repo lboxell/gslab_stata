@@ -7,7 +7,7 @@
 cap program drop add_b_se_table
 
 program add_b_se_table 
-	syntax , iter(int) vars(string) [add_N(string) add_N_clust(string)]
+	syntax , iter(int) vars(string) [add_N(string) add_N_clust(string) wild_boot]
 	local i = 1
 	local j = 1
 	foreach v in `vars'{
@@ -29,6 +29,12 @@ program add_b_se_table
 			}
 			if abs(`t_stat') > 2.576 {
 				global table_`row'_`iter' "$^{***}$"
+			}
+			if "`wild_boot'" != "" {
+				quietly boottest `v', reps(999) weight(webb)
+				if `r(p)' < .05 {
+					global table_wild_`row'_`iter' "$^{\dagger}$"
+				}
 			}
 		}
 		local i = `i' + 1
