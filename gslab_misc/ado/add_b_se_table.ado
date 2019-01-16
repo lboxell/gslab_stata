@@ -32,8 +32,14 @@ program add_b_se_table
 			}
 			if "`wild_boot'" != "" {
 				quietly boottest `v', reps(999) weight(webb)
-				if `r(p)' < .05 {
+				if `r(p)' < .1 {
 					global table_wild_`row'_`iter' "$^{\dagger}$"
+				}
+				if `r(p)' < .05 {
+					global table_wild_`row'_`iter' "$^{\dagger\dagger}$"
+				}
+				if `r(p)' < .01 {
+					global table_wild_`row'_`iter' "$^{\dagger\dagger\dagger}$"
 				}
 			}
 		}
