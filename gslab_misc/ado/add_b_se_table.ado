@@ -32,6 +32,7 @@ program add_b_se_table
 			}
 			if "`wild_boot'" != "" {
 				quietly boottest `v', reps(999) weight(webb)
+				mat table[2 * `i',     `iter'] = abs(_b[`v'] / invnormal(1 - (`r(p)' / 2)))
 				if `r(p)' < .1 {
 					global table_wild_`row'_`iter' "$^{\dagger}$"
 				}
