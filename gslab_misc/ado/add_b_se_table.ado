@@ -7,9 +7,8 @@
 cap program drop add_b_se_table
 
 program add_b_se_table 
-	syntax , iter(int) vars(string) [add_N(string) add_N_clust(string) wild_boot]
+	syntax , iter(int) vars(string) [add_N(string) add_N_clust(string) add_R_sq(string) wild_boot]
 	local i = 1
-	local j = 1
 	foreach v in `vars'{
 		if "`v'" == "." {
 			mat table[2 * `i' - 1, `iter'] = .
@@ -46,11 +45,16 @@ program add_b_se_table
 		}
 		local i = `i' + 1
 	}
-	if "`add_N'" == "yes" {
-		mat table[2 * `i' - 1, `iter'] = e(N)
-		local j = 0
-	}
+	local j = 0
 	if "`add_N_clust'" == "yes" {
-		mat table[2 * `i' - `j', `iter'] = e(N_clust)
+		mat table[2 * `i' - 1 + `j', `iter'] = e(N_clust)
+		local j = `j' + 1
+	}
+	if "`add_N'" == "yes" {
+		mat table[2 * `i' - 1 + `j', `iter'] = e(N)
+		local j = `j' + 1
+	}
+	if "`add_R_sq'" == "yes" {
+		mat table[2 * `i' - 1 + `j', `iter'] = e(r2)
 	}
 end
