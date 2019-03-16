@@ -33,13 +33,13 @@ program add_b_se_table
 				quietly boottest `v', reps(999) weight(webb)
 				mat table[2 * `i',     `iter'] = abs(_b[`v'] / invnormal(1 - (`r(p)' / 2)))
 				if `r(p)' < .1 {
-					global table_wild_`row'_`iter' "$^{*}$"
+					global table_`row'_`iter' "$^{*}$"
 				}
 				if `r(p)' < .05 {
-					global table_wild_`row'_`iter' "$^{**}$"
+					global table_`row'_`iter' "$^{**}$"
 				}
 				if `r(p)' < .01 {
-					global table_wild_`row'_`iter' "$^{***}$"
+					global table_`row'_`iter' "$^{***}$"
 				}
 			}
 		}
